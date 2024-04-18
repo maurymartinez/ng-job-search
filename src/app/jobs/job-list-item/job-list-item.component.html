@@ -1,10 +1,10 @@
 <div class="flex">
   <div class="logo">
-    <img src="https://interstate21.com/job-search-app/Subspace.jpg">
+    <img src="{{job.companyLogo}}">
   </div>
   <div class="extend-flex-div">
-    <h3 class="no-margin">Name</h3>
-    <p class="no-margin">Description</p>
+    <h3 class="no-margin">{{ job.title }}</h3>
+    <p class="no-margin">Company: {{ job.companyName }} &nbsp;&nbsp;&nbsp;&nbsp; Reference: {{ job.reference }}</p>
   </div>
-  <span class="icon-star"></span>
+  <span class="icon-star" id="id-{{job.id}}"></span>
 </div>

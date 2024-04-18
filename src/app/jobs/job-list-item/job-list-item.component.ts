@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Job} from "../entities/job";
 
 @Component({
   selector: 'njs-jobs-job-list-item',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class JobListItemComponent {
 
+  @Input() job: Job = new Job(0, '', '', '', '');
 }
