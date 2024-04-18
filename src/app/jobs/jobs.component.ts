@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-job',
+  selector: 'njs-jobs-job',
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css'
 })
