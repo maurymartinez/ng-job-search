@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Job} from "../entities/job";
 
 @Component({
@@ -8,5 +8,14 @@ import {Job} from "../entities/job";
 })
 export class JobListItemComponent {
 
-  @Input() job: Job = new Job(0, '', '', '', '');
+  @Input() job: Job = new Job(0, '', '', '', '', false);
+  @Input() showFavoriteIcon: boolean = true;
+
+  @Output() jobUpdate: EventEmitter<Job> = new EventEmitter<Job>();
+
+  setFavorite() {
+    this.job.favorite = !this.job.favorite;
+
+    this.jobUpdate.emit(this.job);
+  }
 }
