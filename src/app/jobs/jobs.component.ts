@@ -1,22 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {Job} from "./entities/job";
-import {JobService} from "./services/job.service";
+import {Component} from '@angular/core';
+import {NavigationEnd, Router} from "@angular/router";
+import {filter} from "rxjs";
 
 @Component({
   selector: 'njs-jobs-job',
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css'
 })
-export class JobsComponent implements OnInit {
+export class JobsComponent {
+  activeRoute: string = '';
 
-  jobs: Job[] = [];
-
-  constructor(private jobService: JobService) {
-  }
-
-  ngOnInit(): void {
-    this.jobService.getAllJobs()
-      .subscribe(value => this.jobs = value)
+  constructor(private router: Router) {
+    router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(route => this.activeRoute = (route as NavigationEnd).url)
   }
 
 }
