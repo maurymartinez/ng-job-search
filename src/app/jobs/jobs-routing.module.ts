@@ -12,6 +12,10 @@ const routes: Routes = [
       {path: '', component: JobListComponent},
       {path: 'favorites', component: JobFavoritesComponent}
     ]
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
