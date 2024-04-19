@@ -1,6 +1,6 @@
 export class Job {
   constructor(private _id: number, private _companyName: string, private _title: string,
-              private _companyLogo: string, private _reference: string) {
+              private _companyLogo: string, private _reference: string, private _favorite: boolean) {
   }
 
 
@@ -42,5 +42,14 @@ export class Job {
 
   set reference(value: string) {
     this._reference = value;
+  }
+
+
+  get favorite(): boolean {
+    return this._favorite;
+  }
+
+  set favorite(value: boolean) {
+    this._favorite = value;
   }
 }
