@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Job} from "../entities/job";
 import {map, Observable} from "rxjs";
+import {JobDetails} from "../entities/job-details";
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,9 @@ export class JobService {
       .pipe(
         map(jobs => jobs.filter(job => job.favorite))
       )
+  }
+
+  getJobDetails(jobId: number): Observable<JobDetails> {
+    return this.http.get<JobDetails>(`/jobs/${jobId}`);
   }
 }
