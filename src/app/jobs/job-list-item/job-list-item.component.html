@@ -3,7 +3,7 @@
     <img src="{{job.companyLogo}}">
   </div>
   <div class="extend-flex-div">
-    <h3 class="no-margin">{{ job.title }}</h3>
+    <h3 class="no-margin"><a routerLink="/jobs/{{job.id}}"> {{ job.title }}</a></h3>
     <p class="no-margin">Company: {{ job.companyName }} &nbsp;&nbsp;&nbsp;&nbsp; Reference: {{ job.reference }}</p>
   </div>
   <span class="icon-star" [class.active]="job.favorite" id="id-{{job.id}}" (click)="setFavorite()"
