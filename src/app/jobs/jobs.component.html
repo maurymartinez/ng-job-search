@@ -1,9 +1,9 @@
 <div class="center-content">
-    <h1>Find your job</h1>
-    <nav>
-        <button routerLink="/" [class.active-route]="activeRoute == '/'">Jobs</button>
-        <button routerLink="/favorites" [class.active-route]="activeRoute == '/favorites'">Favorites</button>
-    </nav>
+  <h1>Find your job</h1>
+  <nav>
+    <button routerLink="/jobs" [class.active-route]="activeRoute.indexOf('favorites') < 0">Jobs</button>
+    <button routerLink="/jobs/favorites" [class.active-route]="activeRoute.indexOf('favorites') >= 0">Favorites</button>
+  </nav>
 </div>
 
 <router-outlet></router-outlet>

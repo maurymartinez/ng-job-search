@@ -13,7 +13,6 @@ export class JobsComponent {
   constructor(private router: Router) {
     router.events
       .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(route => this.activeRoute = (route as NavigationEnd).url)
+      .subscribe(route => this.activeRoute = (route as NavigationEnd).urlAfterRedirects)
   }
-
 }
