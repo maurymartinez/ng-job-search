@@ -7,7 +7,7 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: '',
+    path: 'jobs',
     loadChildren: () => import('./jobs/jobs.module').then(m => m.JobsModule)
   }
 ];
