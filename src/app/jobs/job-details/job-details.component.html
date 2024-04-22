@@ -1,0 +1,21 @@
+<div class="details-content">
+  <div class="flex home" (click)="back()">
+    <img src="assets/images/home.png" class="home-icon">
+    <label>Back</label>
+  </div>
+
+  <div class="flex">
+    <div class="logo">
+      <img src="{{jobDetails.companyLogo}}">
+    </div>
+    <h1>{{ jobDetails.companyName }} - {{ jobDetails.title }}</h1>
+  </div>
+  <div class="tag-list">
+    <njs-common-tag-element [types]="jobDetails.types.concat(jobDetails.industries)"></njs-common-tag-element>
+  </div>
+  <div><b>Publish Date:</b> {{ jobDetails.publishDate | date: 'shortDate' }}</div>
+  <div><b>Location:</b> {{ jobDetails.location }}</div>
+  <div><b>Reference:</b> {{ jobDetails.reference }}</div>
+  <div><b>Description:</b></div>
+  <section [innerHTML]="description"></section>
+</div>
